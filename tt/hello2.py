@@ -1,0 +1,2 @@
+def n():
+    print('nnnnnnnn')
