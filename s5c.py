@@ -4,6 +4,32 @@ def s5c(u33,y,d2,d3,df):
     import finta as f
     from finta import TA as ff
     import s6
+
+##    df.set_index(df['Datetime'],inplace=True)
+##    df['s3b']=''
+##    df['s2b']=''
+##    df['i']=0
+##    i=0
+##    for x in df.index:
+##        df['i'].loc[x]=i
+##        df['s3b'].loc[x]=str(df['Datetime'].loc[x]).split(' ')[0]
+##        df['s2b'].loc[x]=str(df['Datetime'].loc[x]).split(' ')[1][0:5]
+##        i=i+1
+##
+####    df.drop('Datetime', axis=1, inplace=True)
+##    
+####    df['Datetime']=df['s3b']+'-'+df['s2b']
+####    df.set_index(df['Datetime'],inplace=True)
+##
+####    print(df,'s5c')
+##    pp=df['s3b'].unique()
+##
+##
+####    print(pp)
+##    for x in pp:
+##        df=df.iloc[df['s3']==pp]
+##    print(df,'filtered by single date')
+
 ##    df=gt4
 # https://pythonrepo.com/repo/peerchemist-finta-python-finance
     v = df['Volume'].values
@@ -159,5 +185,6 @@ def s5c(u33,y,d2,d3,df):
 
 ##############################
 ##    print(df['VZO'],' with VZO values',' == ',u33,' == ')
+    print(df,'   s5c')
     return(u33,df)
-        
+    

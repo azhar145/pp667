@@ -8,6 +8,7 @@ def vv(df7a,df8,df9,df9a):
     from dateutil import parser
     from dateutil import parser
     import s4
+
         
     import gc
     import pandas as pd
@@ -44,25 +45,35 @@ def vv(df7a,df8,df9,df9a):
     todays_date = dt.date.today 
     print(todays_date(),"-- Today's Date --")
     
-    g=pd.date_range('2022-02-04', todays_date(),freq=pd.offsets.BDay())
+    g=pd.date_range('2022-02-10', todays_date(),freq=pd.offsets.BDay())
 
     print(g,"-- Date array --")
     print('Script is going to check # of days = ',len(g))
     k=0
+    print('\n')
+    print(g)
+##    for x in g:
+##        print(str(x).split(' ')[0])
+
+
+    
+    print('\n')
     for x in g:
+        
         print('====================================================')
         u33=x.date()
 ##        print(x.date(),' date in loop')
-
-        p2b=x
-        k=k+1     
-        px=pd.Series(p2b)
-        px=pd.to_datetime(px)
-        p2c=px.dt.day_name()
-        global p2d
-        p2d=str(p2c).split(' ')[4]
-
-        p2b=str(p2b)
+        print(u33,'----------------------------------------------------------------')
+        
+##        p2b=x
+##        k=k+1     
+##        px=pd.Series(p2b)
+##        px=pd.to_datetime(px)
+##        p2c=px.dt.day_name()
+##        global p2d
+##        p2d=str(p2c).split(' ')[4]
+##
+##        p2b=str(p2b)
     ##    p2b='2022-02-03'
     ##    p2c=datetime.datetime.strptime(p2b,'%Y-%m-%d').weekday()
     ##    p2c=pd.to_datetime(p2b).datetime.datetime.day_name()
@@ -71,25 +82,44 @@ def vv(df7a,df8,df9,df9a):
         ATR_target=0
         adx_target=0
 
+        d2=g[0].date()
+        d3=g[-1].date()
+        
+        print(d2,'   ',d3)
 
-        p=d3=datetime.datetime.date(parser.parse(p2b))+datetime.timedelta(days=1)
-        d2=str(p)
-
-        pdate=p
-        d3=datetime.datetime.date(parser.parse(d2))-datetime.timedelta(days=1)
-
-
+        
+##        p=d3=datetime.datetime.date(parser.parse(p2b))+datetime.timedelta(days=1)
+##        d2=str(p)
+##
+##        pdate=p
+##        d3=datetime.datetime.date(parser.parse(d2))-datetime.timedelta(days=1)
+##
+     
 ##        print('end of main, 4444')  
         for y in dict:
                 for x2 in dict[y]:
                         
-                        print(y,'  ',x2)
+                        print(y,'  ',x2,'888')
 
 ##                        print('start of s4, 4445') 
         # ===================================================================================================== >   [55]                
-                        u33,y,d2,d3,gt4=s4.s4(u33,y , x2,ATR_target,adx_target,d2,d3)
+                        u33,y,d2,d3,df=s4.s4(u33,y , x2,ATR_target,adx_target,d2,d3)
+
+##
+##                        print('\n')
+##                        print('=================================================')
+##                        print('u33=',u33)
+##                        print('y=',y)
+##                        print('d2=',d2)
+##                        print('d3=',d3)
+##                        print('df=',df)
+##                        print('=================================================')
+##                        
 ##                        print('end of s4, 4445')
 ##                        print('====================================================')
-        return(u33,y , x2,ATR_target,adx_target,d2,d3,gt4)
+##        return(u33,y , x2,ATR_target,adx_target,d2,d3,gt4)
+        print(df,'s4')                
+        return(u33,y,d2,d3,df)
 
  
+       

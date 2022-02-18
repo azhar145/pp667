@@ -23,6 +23,8 @@ def s4(u33,y , x2,ATR_target,adx_target,d2,d3):
     from datetime import timedelta
     from dateutil import parser
     from dateutil import parser
+
+##    print(u33,'<- u33    d2 ->',d2,' d3->',d3)
         
     
         
@@ -80,13 +82,17 @@ def s4(u33,y , x2,ATR_target,adx_target,d2,d3):
     
     proxyb = random.choice(proxies)
 
-    df = yf.download(x2,start=d3,end=d2,interval='1m',auto_adjust = True,threads = True,prepost=True,progress=False, proxies=proxyb)
+##    df =yf.download(tickers,  start = "2021-02-01" , end = "2021-02-04")
+
+    df = yf.download(x2,start=d2,end=d3,interval='60m',auto_adjust = True,threads = True,prepost=True,progress=False, proxies=proxyb)
+    print(df,' eeeeeeeeeeeeeeeeeeeee from s4')  
     df['ticker']=''
     for x in df.index:
         df['ticker'].loc[x]=x2
         
         
 ##    print(df,x2,' === ',u33,' ===')
+      
     return(u33,y,d2,d3,df)
 
 
